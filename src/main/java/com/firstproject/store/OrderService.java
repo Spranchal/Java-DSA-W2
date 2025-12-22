@@ -17,6 +17,7 @@ public class OrderService {
     public void placeOrder() {
         
         paymentService.processPayment(10);
+        paymentService.processPayment(20);
     }
     public void setPaymentService(PaymentService paymentService) {
         this.paymentService = paymentService;
