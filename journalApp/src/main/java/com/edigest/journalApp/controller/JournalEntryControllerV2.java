@@ -27,6 +27,7 @@ public class JournalEntryControllerV2 {
     @GetMapping
     public List<JournalEntry> getAll() { // get all data
        return journalEntryService.getAll();
+    
     }
 
     //adding data
@@ -51,6 +52,7 @@ public class JournalEntryControllerV2 {
     @PutMapping("/id/{id}")
     public JournalEntry updateJournalEntryById(@PathVariable ObjectId id, @RequestBody JournalEntry newEntry) {
         JournalEntry old = journalEntryService.findById(id).orElse(null);
+        //TIME FOR SOME LOGIC ~_~
         if(old != null) {
             old.setTitle(newEntry.getTitle() != null && !newEntry.getTitle().equals("") ?
              newEntry.getTitle() : old.getTitle());
